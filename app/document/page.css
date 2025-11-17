@@ -1,0 +1,12 @@
+.date-display {
+  font-family: 'Arial', sans-serif;
+  letter-spacing: 0.5px;
+  font-weight: normal;
+  /* color: rgb(30, 41, 57) */
+}
+.name-display{
+  font-family: 'Arial', sans-serif;
+  letter-spacing: 1.5px;
+  font-weight: normal;
+
+}
