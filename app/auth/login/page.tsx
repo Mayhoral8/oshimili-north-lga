@@ -175,7 +175,7 @@ const Page = () => {
             )}
           </Formik>
           <div className="pt-2 text-gray-800 flex gap-x-2">
-            <span>Already an account?</span>
+            <span>Don't have an account?</span>
             <Link href={"/auth/register"}>
               <span className="text-primary-purple font-medium">Sign Up</span>
             </Link>

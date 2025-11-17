@@ -20,7 +20,7 @@ const outfit = Outfit({
 
 export const metadata: Metadata = {
   title: "Oshimili North Local Government",
-  description: "Official website and Online portal for Oshimili North Local Government Area",
+  description: "Official online portal for Oshimili North Local Government Area",
 };
 
 export default function RootLayout({
