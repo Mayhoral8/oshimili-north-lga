@@ -20,42 +20,77 @@ interface FormData {
   sub_clan: string;
 }
 
-const CLAN_CHOICES = ["Agbon", "Abraka Oruarivie", "Abraka Umiagwa"];
+const CLAN_CHOICES = [
+  "Akwukwu-Igbo",
+  "Ibusa",
+  "Okpanam",
+  "Illah",
+  "Ebu",
+  "Ukala",
+  "Atuma Iga",
+  "Ugbolu",
+];
+
+type ClanType =
+  | "Akwukwu-Igbo"
+  | "Ibusa"
+  | "Okpanam"
+  | "Illah"
+  | "Ebu"
+  | "Ukala"
+  | "Atuma Iga"
+  | "Ugbolu";
 
 const SUB_CLAN_CHOICES: Record<ClanType, string[]> = {
-  Agbon: [
-    "Okpara Inland/Waterside",
-    "Kokori Inland",
-    "Eku",
-    "Orhoakpor",
-    "Otorho-Agbon (Isiokolo)",
-    "Igun",
-    "Ovu-Inland",
-    "Okurekpo",
-    "Oviorie-Ovu",
-    "Samagidi",
+  "Akwukwu-Igbo": [
+    "Ogbe Obi",
+    "Ogbe Iyase",
+    "Ogbe Onihe",
+    "Umu-Onai",
+    "Umu-Ekeke",
+    "Ogbe-Ani",
+    "Achalla",
+    "Umuolum",
+    "Umu-Opu",
   ],
-  "Abraka Oruarivie": [
-    "Uhruoka",
-    "Ekrejeta",
-    "Ajalomi",
-    "Urhuovie",
-    "Ehro",
-    "Ugono",
-    "Erhirhie",
-    "Ogbeje",
-    "Otorho",
+  Illah: [
+    "Ajaji",
+    "Umutedem",
+    "Umutei",
+    "Ukwumege",
+    "Ukpologwu",
+    "Onyah",
+    "Umuagwu",
+    "Ogbeorji",
+    "Ogbeolu",
   ],
-  "Abraka Umiagwa": [
-    "Orial",
-    "Uruagbesa",
-    "Umeghe",
-    "Ughere",
-    "Oteri",
-    "Agbarha",
+  "Atuma Iga": ["Ogbe-Obi", "Ogbe-Onihe", "Ogbe-Ute", "Ogbe-Abor", "Ajaji"],
+  Ukala: ["Umueze -eze", "Umuisiuzor", "Ogbe-iyase", "Umuakele"],
+  Okpanam: ["Obodogwu", "Obodogba", "Amachai", "Ogunadagbe"],
+  Ebu: [
+    "Ekpechor",
+    "Uchebe",
+    "Okemuokuru",
+    "Ogor",
+    "Iyagoshimi",
+    "Ugbolo",
+    "Aganike",
+    "Amuomagele",
   ],
+  Ibusa: [
+    "Umueze",
+    "Umuezeagwu",
+    "Umuwagu",
+    "Umuidinisagba",
+    "Umuodafe",
+    "Ogboli",
+    "Umuekea",
+    "Anyalaobum",
+    "Ogbeowele",
+    "Umuehea",
+  ],
+  Ugbolu: ["Ogbeobi", "Ogbeese", "Amachai"],
 };
-type ClanType = "Agbon" | "Abraka Oruarivie" | "Abraka Umiagwa";
 
 const PersonalDetails = () => {
   const { setCurrentStep } = useContext(CreateContext).portal;
@@ -167,7 +202,6 @@ const PersonalDetails = () => {
       if (uploadMode === "edit") {
         setUploadMode("normal");
         setCurrentStep(4);
-
       } else {
         setCurrentStep(2);
       }
