@@ -190,7 +190,7 @@ const PersonalDetails = () => {
           body: JSON.stringify({
             ...payload,
             state_of_origin: "Delta",
-            lga_of_origin: "ethiope-east",
+            lga_of_origin: "oshimili-north",
           }),
         }
       );

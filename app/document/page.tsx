@@ -187,7 +187,7 @@ const CertificateTemplate = React.forwardRef<
     return (
       <div
         ref={ref}
-        className="relative lg:w-[595px] lg:h-[540px] w-[595px] h-[540px] flex items-center justify-center z-[-10]"
+        className="relative lg:w-[595px] lg:h-[540px] w-[595px] h-[540px] flex items-center justify-center -z-10]"
       >
         <div className="absolute text-sm top-0 ml-[360px] mt-[138px] z-20 flex items-center gap-x-2">
           <span style={{ color: "#1e2939" }} className="date-display">
