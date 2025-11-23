@@ -172,8 +172,8 @@ const CertificateTemplate = React.forwardRef<
   const handleGenerateQrCode = async () => {
     try {
       const response = await QRCode.toDataURL(
-        `https://ethiope-east-lg.vercel.app/verify?id=${data?.tracking_number}` ||
-          "ethiope"
+        `https://portal.oshimilinorthlga.dl.gov.ng/verify?id=${data?.tracking_number}` ||
+          "oshimillinorth"
       );
       setQrCode(response);
     } catch (err) {
