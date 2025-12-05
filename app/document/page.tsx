@@ -211,9 +211,9 @@ const CertificateTemplate = React.forwardRef<
 
         <span
           style={{ color: "#1e2939" }}
-          className="name-display z-20 absolute text-sm top-0 mt-[315px] ml-[150px]"
+          className="name-display z-20 absolute text-sm top-0 mt-[295px] ml-[20px]"
         >
-          {data?.clan},{data?.sub_clan}
+          {data?.sub_clan}, {data?.clan}
         </span>
 
         <img

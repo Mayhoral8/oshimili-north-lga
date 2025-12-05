@@ -35,13 +35,15 @@ export default NextAuth({
             console.log(user);
             return user;
           } else {
+            // console.log(user);
             throw new Error(
-              user?.responseMessage || "Invalid login credentials"
+              user?.error || "Invalid login credentials"
             );
           }
         } catch (error) {
-          console.log("error", response);
-          console.log(error.message);
+          console.error("error", response);
+          console.error(error.message);
+          throw error;
         }
       },
     }),

@@ -9,6 +9,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { getSession, signIn, useSession } from "next-auth/react";
 import { CreateContext } from "@/Context";
+import { toast } from "sonner";
 
 interface LoginFormData {
   email: string;
@@ -72,7 +73,6 @@ const Page = () => {
     </div>
   );
 
-  
   const handleSubmit = async (
     values: LoginFormData,
     { setSubmitting }: any
@@ -86,13 +86,14 @@ const Page = () => {
       });
 
       if (!response?.ok) {
+        console.log("response", response);
         throw new Error(response?.error || "An error occurred");
       }
       const updatedSession = await getSession();
       const userRole = updatedSession?.user?.role;
 
       // console.log("response", response);
-      
+
       if (userRole === "Admin") {
         router.push("/admin?page=1");
       } else {
@@ -102,7 +103,7 @@ const Page = () => {
     } catch (error: any) {
       // setErrorMsg(error.message);
       // setShowErrorModal(true);
-      console.error("an error  occured");
+      toast.error("Login failed, check your credentials");
       // setIsLoading(false);
     } finally {
       setSubmitting(false);
@@ -112,8 +113,7 @@ const Page = () => {
 
   return (
     <div className="h-screen bg-white p-4">
-       <div className="w-full flex lg:flex-row items-center h-full border-red-400  gap-x-4">
-        
+      <div className="w-full flex lg:flex-row items-center h-full border-red-400  gap-x-4">
         {/* Form Container */}
         <div className="bg-white rounded-2xl lg:p-8 border-red-400 lg:w-1/2 w-full h-full flex flex-col items-center justify-center mx-auto ">
           <div className="text-center mb-8">
