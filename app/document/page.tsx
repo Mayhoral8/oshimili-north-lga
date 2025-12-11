@@ -3,6 +3,7 @@ import React, { useState, useRef, useEffect } from "react";
 import { Download, Printer } from "lucide-react";
 import certificateImg from "@/assets/certificate.png";
 import signature from "@/assets/sign.png";
+import stamp from "@/assets/stamp.png";
 import QRCode from "qrcode";
 import "./page.css";
 import { Application } from "../portal/FamilyDetails";
@@ -219,17 +220,23 @@ const CertificateTemplate = React.forwardRef<
         <img
           className="absolute z-20 mt-[390px] h-28 w-28 mr-98"
           src={data?.supporting_doc}
-          alt="Signature"
+          alt="doc"
         />
         <img
           className="absolute z-20 mt-[390px] h-28 w-28 mr-28"
           src={qrCode}
-          alt="Signature"
+          alt="qrCode"
         />
 
         <img
-          className="absolute z-20 mt-[380px] h-64 w-64 ml-[280px]"
+          className="absolute z-20 mt-[380px] h-28 w-28 ml-[280px]"
           src={signature.src}
+          alt="Signature"
+        />
+
+ <img
+          className="absolute z-20 mt-[360px] h-18 w-28 ml-[430px]"
+          src={stamp.src}
           alt="Signature"
         />
 
