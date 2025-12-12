@@ -234,10 +234,10 @@ const CertificateTemplate = React.forwardRef<
           alt="Signature"
         />
 
- <img
-          className="absolute z-20 mt-[360px] h-18 w-28 ml-[430px]"
+        <img
+          className="absolute z-20 mt-[360px] h-24 w-60 ml-[280px]"
           src={stamp.src}
-          alt="Signature"
+          alt="stamp"
         />
 
         {/* Background img Container */}
